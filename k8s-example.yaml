@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: k8s-example
-        image: lusyoe/k8s-example
+        image: ${IMAGE_URL}  // replaced in run time 
         resources:
           requests:
             cpu: 100m
@@ -60,7 +60,7 @@ metadata:
   name: k8s-example
 spec:
   rules:
-  - host: k8s-example.com
+  - host: codemeltter.pwcinternal.com
     http:
       paths:
       - backend:
