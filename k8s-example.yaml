@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: k8s-example
-        image: ${IMAGE_URL}  // replaced in run time 
+        image: ${IMAGE_URL}  // will be replaced in run time 
         resources:
           requests:
             cpu: 100m
@@ -41,7 +41,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: k8s-example
+  name: k8s-example // need to change in run time for different application 
   labels:
     app: k8s-example
     tier: backend
@@ -50,7 +50,7 @@ spec:
     app: k8s-example
     tier: backend
   ports:
-  - port: 8080
+  - port: 8080 // make a variable ${PORT}
     name: k8s-backend
 
 ---
